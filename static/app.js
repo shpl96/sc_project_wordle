@@ -1,6 +1,5 @@
 let index=0;
 let row= 0;
-const answer= "APPLE";
 
 
 
@@ -45,13 +44,21 @@ const pressBackspace= (event) => {
     }
  
     //Enter and check answer
-    const pressEnter = () =>{
+    const pressEnter = async () =>{
         let rightAnswer=0;
+
+        //get answer from backend server
+        const reply= await fetch("/answer");
+        //backend에서 가져온 reply를 json으로 바꿔준다
+        const answer= await reply.json();
+
+
+        //check answer and show different color boxes
         for (let i= 0; i<5; i++){
             
             const boxAnswer= document.querySelector(`#box[data-index="${row}${i}"]`);
-            const answerUser= boxAnswer.innerHTML
-            const answerCheck= answer[i]
+            const answerUser= boxAnswer.innerHTML;
+            const answerCheck= answer[i];
 
             if (answerUser === answerCheck){
                 boxAnswer.style.background= "#6aaa64";
