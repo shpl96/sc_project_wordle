@@ -42,7 +42,7 @@ const pressBackspace= (event) => {
         gameOverLOSTDiv.innerText= " 오늘의 워들 문제 실패ㅠㅠ! "
         document.body.appendChild(gameOverLOSTDiv);
     }
- 
+
     //Enter and check answer
     const pressEnter = async () =>{
         let rightAnswer=0;
@@ -76,9 +76,9 @@ const pressBackspace= (event) => {
 
         //letter input
     const writeKey= (event) =>{
-        const alphabetKey= event.key
+        const alphabetKey= event.key;
         const keyCode= event.keyCode;
-        console.log(alphabetKey)
+        console.log(alphabetKey);
         const box= document.querySelector(`#box[data-index="${row}${index}"]`);
 
         if (index === 5){ 
