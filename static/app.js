@@ -59,7 +59,7 @@ const pressBackspace= (event) => {
             const boxAnswer= document.querySelector(`#box[data-index="${row}${i}"]`);
             const answerUser= boxAnswer.innerHTML;
             const answerCheck= answer[i];
-
+u
             if (answerUser === answerCheck){
                 boxAnswer.style.background= "#6aaa64";
                 rightAnswer +=1;
@@ -72,7 +72,7 @@ const pressBackspace= (event) => {
         
         if (rightAnswer === 5) {gameOver(); gameWinDisplay()};
         nextLine();
-    }
+    };
 
         //letter input
     const writeKey= (event) =>{
